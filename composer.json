@@ -1,0 +1,30 @@
+{
+  "name": "bizquiz/bizquiz-api",
+  "description": "BizQuiz server side PHP API.",
+  "keywords": [
+    "bizquiz",
+    "api",
+    "lti"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Wind",
+      "email": "mawi@bizgames.at"
+    }
+  ],
+  "type": "project",
+  "require": {
+    "php": ">=5.6",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "require-dev": {
+    "php": ">=7.1",
+    "phpunit/phpunit": "^7"
+  },
+  "autoload": {
+    "psr-4": {
+      "BizQuiz\\": "src/"
+    }
+  }
+}
