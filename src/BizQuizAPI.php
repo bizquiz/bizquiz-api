@@ -85,7 +85,7 @@ class BizQuizAPI {
         return $this->baseURL.'/lti';
     }
 
-    public function getLTILaunchParameter($userId, $email = null, $firstname = null, $lastname = null, $resourceLinkId = 'dashboard', $time = null)
+    public function getLTILaunchParameter($userId, $email = null, $firstname = null, $lastname = null, array $groups = null, $team = null, $resourceLinkId = 'dashboard', $time = null)
     {
         $parameters = [
             // type and verion
@@ -121,6 +121,14 @@ class BizQuizAPI {
 
         if (!empty($email)) {
             $parameters['lis_person_contact_email_primary'] = $email;
+        }
+
+        if (!empty($groups)) {
+            $parameters['custom_groups'] = implode(',', $groups);
+        }
+
+        if (!empty($team)) {
+            $parameters['custom_team'] = $team;
         }
 
         // sign the parameters
